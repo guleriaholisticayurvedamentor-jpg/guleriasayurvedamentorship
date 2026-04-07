@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Card from '../components/Card'
+import Testimonials from '../components/Testimonials'
 import './Home.css'
 
 const features = [
@@ -46,7 +47,7 @@ const programs = [
 export default function Home() {
   return (
     <main className="home">
-      {/* Hero */}
+      {/* Hero — pure CSS gradient, no image */}
       <section className="hero">
         <div className="hero__overlay" />
         <div className="container hero__content">
@@ -61,10 +62,12 @@ export default function Home() {
             <Link to="/programs" className="btn btn-primary">Explore Programs</Link>
             <Link to="/about" className="btn btn-outline hero__btn-outline">Meet the Mentor</Link>
           </div>
+          <div className="hero__mentor-tag fade-in-delay-4">
+            <span className="hero__mentor-dot" />
+            <span>With Vyasa — Dr. Praveen Guleria</span>
+          </div>
         </div>
-        <div className="hero__scroll-hint">
-          <span>↓</span>
-        </div>
+        <div className="hero__scroll-hint"><span>↓</span></div>
       </section>
 
       {/* Features */}
@@ -145,6 +148,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* CTA Banner */}
       <section className="cta-banner">

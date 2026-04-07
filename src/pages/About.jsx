@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PhotoSlider from '../components/PhotoSlider'
 import './About.css'
 
 const philosophy = [
@@ -43,10 +44,7 @@ export default function About() {
       <section className="section about-intro">
         <div className="container about-intro__inner">
           <div className="about-intro__avatar">
-            <div className="avatar-circle">
-              <span>🌿</span>
-              <p>Dr. Praveen<br />Guleria</p>
-            </div>
+            <PhotoSlider />
             <div className="about-intro__creds">
               <span>BAMS</span>
               <span>MD (Ayurveda)</span>

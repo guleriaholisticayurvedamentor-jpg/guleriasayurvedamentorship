@@ -6,13 +6,15 @@
   z-index: 1000;
   padding: 20px 0;
   transition: all 0.3s ease;
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(7,26,16,0.75) 0%, transparent 100%);
+  backdrop-filter: blur(0px);
 }
 
 .navbar--scrolled {
   background: rgba(250, 248, 243, 0.97);
   padding: 12px 0;
   box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
 }
 
 .navbar__inner {
@@ -28,6 +30,11 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   font-weight: 700;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.navbar--scrolled .navbar__brand {
   color: var(--green-dark);
 }
 
@@ -47,9 +54,13 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--text-dark);
+  color: rgba(255,255,255,0.9);
   transition: color 0.2s;
   position: relative;
+}
+
+.navbar--scrolled .navbar__links a {
+  color: var(--text-dark);
 }
 
 .navbar__links a::after {
@@ -59,7 +70,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--green-dark);
+  background: var(--saffron);
   transition: width 0.3s ease;
 }
 
@@ -70,6 +81,11 @@
 
 .navbar__links a.active,
 .navbar__links a:hover {
+  color: var(--saffron-light);
+}
+
+.navbar--scrolled .navbar__links a.active,
+.navbar--scrolled .navbar__links a:hover {
   color: var(--green-dark);
 }
 
@@ -96,8 +112,12 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--green-dark);
+  background: var(--white);
   transition: all 0.3s ease;
+}
+
+.navbar--scrolled .navbar__toggle span {
+  background: var(--green-dark);
 }
 
 .navbar__toggle.open span:nth-child(1) {
