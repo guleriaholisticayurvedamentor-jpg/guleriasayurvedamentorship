@@ -273,8 +273,8 @@
 .manas {
   background-image: url('/images/WhatsApp Image 2026-04-07 at 2.49.20 PM (1).jpeg');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center center;
+  background-attachment: scroll;
   position: relative;
 }
 
@@ -443,10 +443,19 @@
   .hero__photo .photo-slider {
     max-width: 300px;
   }
-  .features,
-  .acaf,
-  .manas,
+  .manas {
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
   .programs-preview {
+    background-position: top center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  .cta-banner {
+    background-position: top center;
+    background-size: cover;
     background-attachment: scroll;
   }
 }
@@ -480,5 +489,32 @@
   }
   .hero__actions {
     flex-direction: column;
+  }
+}
+
+/* ===== MOBILE BG IMAGE FIX ===== */
+@media (max-width: 768px) {
+  .manas {
+    background-image: url('/images/WhatsApp Image 2026-04-07 at 2.49.20 PM (1).jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+  }
+
+  .programs-preview {
+    background-image: url('/images/WhatsApp Image 2026-04-07 at 3.45.39 PM.jpeg');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+  }
+
+  .cta-banner {
+    background-image: url('/images/WhatsApp Image 2026-04-07 at 3.43.07 PM.jpeg');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
   }
 }

@@ -26,7 +26,7 @@ export default function ProgramStudents() {
               or disconnected from their purpose in Ayurveda.
             </p>
             <p>
-              Dr. Praveen Guleria draws from his own experience as a BAMS student, Ayurvedist, and
+              Dr. Praveen Guleria draws from her own experience as a BAMS student, Ayurvedist, and
               life mentor to create a program that addresses not just academic challenges, but the
               deeper psychological and identity-related struggles that students face.
             </p>

@@ -19,7 +19,7 @@ const journey = [
   {
     phase: 'As an Ayurvedist',
     icon: '🌿',
-    desc: 'Practiced and taught Ayurveda for over 16 years, helping hundreds of patients and students reconnect with holistic health.',
+    desc: 'As an expert in Ayurvediya Rasa Shastra and Bhaishajya Kalpana, inculcating the knowledge of medicine preparation and therapeutic effects serving as the basis of future Ayurveda Practice.',
   },
   {
     phase: 'As a Life Mentor',
@@ -56,16 +56,52 @@ export default function About() {
             <p className="section-eyebrow">16+ Years of Experience</p>
             <h2 className="section-title">Ayurveda Educator & Mentor</h2>
             <p>
-              Dr. Praveen Guleria is a distinguished Ayurveda physician, educator, and life mentor with over
-              16 years of experience in Ayurvedic teaching and practice. Holding a BAMS, MD in Ayurveda,
-              and an MSc in Spirituality & Value Education, he brings a rare combination of classical
-              scholarship and modern insight.
+              Dr. Praveen Guleria's journey in Ayurveda began not merely as a professional pursuit, but as a
+              calling to understand life in its wholeness — the sacred connection between mind, body, purpose,
+              and service.
             </p>
             <p style={{ marginTop: '16px' }}>
-              As a Certified Life Coach and Ayurveda Educator, Dr. Guleria has dedicated his life to
-              helping students and professionals become confident, balanced, and purposeful Vaidyas.
-              His approach bridges the ancient wisdom of Ayurveda with contemporary psychological tools
-              to create lasting transformation.
+              As a student of Ayurveda, she experienced firsthand the rigor of classical study, the pressure
+              to excel clinically, and the quiet self-doubt that many students carry but seldom voice. She
+              began to realize something profound: knowledge alone does not shape a Vaidya. Inner clarity,
+              emotional steadiness, ethical strength, and self-trust are equally essential. This realization
+              became a defining turning point.
+            </p>
+            <p style={{ marginTop: '16px' }}>
+              Over the past 16+ years as a teacher, physician, and mentor, Dr. Guleria has guided countless
+              students through the same inner and professional challenges she once navigated — academic
+              overwhelm, lack of clinical confidence, uncertainty about career direction, and the delicate
+              balance between personal life and professional growth.
+            </p>
+            <p style={{ marginTop: '16px' }}>
+              She is proficient in her subject expertise of Rasa Shastra and Bhaishajya Kalpana and ensures
+              the exposure of students to the intricacies of medicine preparation and their therapeutic
+              effects. Her pursuit of an MSc in Spirituality and Value Education deepened her conviction
+              that Ayurveda is not only a science of healing but a path of self-evolution. She believes that
+              true healing begins within the healer.
+            </p>
+            <p style={{ marginTop: '16px' }}>
+              In classrooms, pharmacy, clinics, and mentorship spaces, she goes beyond teaching formulations
+              and treatment protocols. She cultivates discernment. She nurtures confidence. She encourages
+              reflection. She trains students to think, feel, and lead like Vaidyas — not merely to memorize
+              knowledge.
+            </p>
+            <p style={{ marginTop: '16px' }}>Her approach integrates:</p>
+            <ul style={{ marginTop: '8px', paddingLeft: '20px', color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: '2' }}>
+              <li>Classical Ayurvedic wisdom</li>
+              <li>Practical clinical reasoning</li>
+              <li>Emotional intelligence and inner resilience</li>
+              <li>Ethical clarity and professional integrity</li>
+              <li>Purpose-driven leadership</li>
+            </ul>
+            <p style={{ marginTop: '16px' }}>
+              Dr. Guleria believes that a Vaidya must embody balance before prescribing it, cultivate
+              compassion before advising it, and lead from wisdom rather than ego.
+            </p>
+            <p style={{ marginTop: '16px' }}>
+              Today, her mission remains unwavering: to help Ayurveda students and professionals evolve into
+              confident, balanced, and compassionate Vaidyas — who lead with wisdom, practice with integrity,
+              and serve with purpose. For her, mentorship is not instruction. It is transformation.
             </p>
             <div className="about-intro__quals">
               <div className="qual-item">
