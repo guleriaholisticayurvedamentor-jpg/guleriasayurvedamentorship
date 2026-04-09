@@ -39,6 +39,40 @@ Thank you for everything, Ma'am. You've truly made a difference in my life.
 With deepest respect and gratitude,
 Dr. Sahore Shikha Virmani`,
   },
+  {
+    id: 3,
+    name: 'Dr. Puja Shelke',
+    role: 'BAMS MS Shalya Tantra, Assistant Professor',
+    avatar: '👩‍⚕️',
+    short: 'You were not only a guide or mentor for students but like a light beam for the whole SKSS. That single statement — "you have the capability, you should do PG" — made me choose my path.',
+    full: `You were not only a guide or mentor for students but like a light beam for the whole SKSS...!!!
+
+You were the one who motivated me for my PG. Once you said this to me outside the Rasa Shastra lab — "you have the capability, you should do PG." Only that single statement made me choose my path.
+
+The confidence that you saw in me once still boosts my confidence in my bad and struggling times...!!!
+
+You are the best teacher, guide, and I would also say a friend I have ever got in my life...!!!
+
+Thank you for everything...!!!
+
+Dr. Puja Shelke
+BAMS MS Shalya Tantra, Assistant Professor`,
+  },
+  {
+    id: 4,
+    name: 'Dr. Rohit Wandraw',
+    role: 'BAMS MD Final Year Student',
+    avatar: '👨‍⚕️',
+    short: 'From the kharals of Ras Shastra to the hurdles of life, your selfless help and guidance has truly made our journey commendable.',
+    full: `Mam, your guidance has truly helped me move closer to my goals. Your support, clarity in teaching and constant motivation have made a meaningful difference in my journey. I'm really grateful for everything you've shared with us.
+
+From the kharals of Ras Shastra to the hurdles of life, your selfless help and guidance has truly made our journey commendable.
+
+Thank you for always guiding us in the right direction. 🙏
+
+Dr. Rohit Wandraw
+BAMS MD Final Year Student`,
+  },
 ]
 
 export default function Testimonials() {
