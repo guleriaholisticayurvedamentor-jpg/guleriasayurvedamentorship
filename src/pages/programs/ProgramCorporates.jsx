@@ -3,8 +3,12 @@ import './ProgramDetail.css'
 
 export default function ProgramCorporates() {
   return (
-    <main className="program-detail">
-      <section className="page-hero">
+    <main className="program-detail program-detail--corporates">
+      <section className="page-hero" style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80&fit=crop')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}>
         <div className="container">
           <p className="section-eyebrow">Program</p>
           <h1>💼 For Corporates</h1>

@@ -139,7 +139,8 @@
 
 /* ===== FEATURES ===== */
 .features {
-  background: var(--beige);
+  position: relative;
+  overflow: hidden;
 }
 
 .features__grid {
@@ -183,7 +184,24 @@
 
 /* ===== ACAF ===== */
 .acaf {
-  background: var(--cream);
+  background-image: url('https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=1600&q=80&fit=crop');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.acaf::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 253, 248, 0.78);
+  pointer-events: none;
+}
+
+.acaf .container {
+  position: relative;
+  z-index: 1;
 }
 
 .acaf__inner {
@@ -271,11 +289,8 @@
 
 /* ===== MANAS ===== */
 .manas {
-  background-image: url('/images/WhatsApp Image 2026-04-07 at 2.49.20 PM (1).jpeg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: scroll;
   position: relative;
+  overflow: hidden;
 }
 
 .manas::before {
@@ -344,23 +359,12 @@
 
 /* ===== PROGRAMS PREVIEW ===== */
 .programs-preview {
-  background-image: url('/images/WhatsApp Image 2026-04-07 at 3.45.39 PM.jpeg');
-  background-size: cover;
-  background-position: top center;
-  background-attachment: scroll;
   position: relative;
+  overflow: hidden;
 }
 
 .programs-preview::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(253, 246, 236, 0.72);
-}
-
-.programs-preview .container {
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
 .programs-preview__grid {
@@ -371,24 +375,13 @@
 
 /* ===== CTA BANNER ===== */
 .cta-banner {
-  background-image: url('/images/WhatsApp Image 2026-04-07 at 3.43.07 PM.jpeg');
-  background-size: cover;
-  background-position: top center;
-  background-attachment: scroll;
   position: relative;
+  overflow: hidden;
   padding: 80px 0;
 }
 
 .cta-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(13, 43, 31, 0.55);
-}
-
-.cta-banner .container {
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
 .cta-banner__inner {
@@ -492,29 +485,24 @@
   }
 }
 
-/* ===== MOBILE BG IMAGE FIX ===== */
-@media (max-width: 768px) {
-  .manas {
-    background-image: url('/images/WhatsApp Image 2026-04-07 at 2.49.20 PM (1).jpeg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll;
-    -webkit-background-size: cover;
-  }
+/* ===== JS PARALLAX ===== */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
 
-  .programs-preview {
-    background-image: url('/images/WhatsApp Image 2026-04-07 at 3.45.39 PM.jpeg');
-    background-size: cover;
-    background-position: top center;
-    background-attachment: scroll;
-    -webkit-background-size: cover;
-  }
+.parallax-bg {
+  position: absolute;
+  inset: -30%;
+  background-size: cover;
+  background-position: center center;
+  will-change: transform;
+  z-index: 0;
+}
 
-  .cta-banner {
-    background-image: url('/images/WhatsApp Image 2026-04-07 at 3.43.07 PM.jpeg');
-    background-size: cover;
-    background-position: top center;
-    background-attachment: scroll;
-    -webkit-background-size: cover;
-  }
+.parallax-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay, rgba(0,0,0,0.4));
 }

@@ -45,3 +45,9 @@
 .card__btn {
   margin-top: auto;
 }
+
+@media (max-width: 768px) {
+  .card {
+    padding: 28px 20px;
+  }
+}

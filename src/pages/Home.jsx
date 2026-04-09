@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import Card from '../components/Card'
 import Testimonials from '../components/Testimonials'
 import './Home.css'
@@ -25,26 +26,52 @@ const programs = [
     icon: '📚',
     title: 'For Ayurveda Students',
     subtitle: 'Clarity • Discipline • Purpose',
-    desc: 'A structured mentorship to help BAMS students build confidence, clarity, and a strong Ayurvedic identity.',
+    description: 'A structured mentorship to help BAMS students build confidence, clarity, and a strong Ayurvedic identity.',
     link: '/programs/students',
   },
   {
     icon: '🌸',
     title: 'For Working Women',
     subtitle: 'Balance • Emotional Strength • Self-Growth',
-    desc: 'Empowering women to reclaim balance, emotional health, and purposeful living through Ayurveda.',
+    description: 'Empowering women to reclaim balance, emotional health, and purposeful living through Ayurveda.',
     link: '/programs/women',
   },
   {
     icon: '💼',
     title: 'For Corporates',
     subtitle: 'Clarity • Emotional Stability • Leadership',
-    desc: 'Strategic intelligence and leadership development grounded in Ayurvedic cognitive science.',
+    description: 'Strategic intelligence and leadership development grounded in Ayurvedic cognitive science.',
     link: '/programs/corporates',
   },
 ]
 
 export default function Home() {
+  const parallaxRefs = useRef([])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      parallaxRefs.current.forEach((el) => {
+        if (!el) return
+        const rect = el.parentElement.getBoundingClientRect()
+        const offset = rect.top * 0.35
+        el.style.transform = `translateY(${offset}px)`
+      })
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const parallaxBg = (index, imageUrl, overlay) => (
+    <div
+      ref={(el) => (parallaxRefs.current[index] = el)}
+      className="parallax-bg"
+      style={{
+        backgroundImage: `url('${imageUrl}')`,
+        '--overlay': overlay,
+      }}
+    />
+  )
   return (
     <main className="home">
       {/* Hero — pure CSS gradient, no image */}
@@ -71,8 +98,9 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="section features">
-        <div className="container">
+      <section className="section features parallax-section">
+        {parallaxBg(0, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1600&q=80&fit=crop', 'rgba(253,246,236,0.55)')}
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <p className="section-eyebrow">What We Offer</p>
           <h2 className="section-title">A Holistic Approach to Transformation</h2>
           <p className="section-subtitle">Four pillars that form the foundation of our mentorship</p>
@@ -118,8 +146,9 @@ export default function Home() {
       </section>
 
       {/* Five-Fold Manas Mastery */}
-      <section className="section manas">
-        <div className="container">
+      <section className="section manas parallax-section">
+        {parallaxBg(1, 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600&q=80&fit=crop', 'rgba(13,43,31,0.88)')}
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <p className="section-eyebrow">The System</p>
           <h2 className="section-title">Five-Fold Manas Mastery System</h2>
           <p className="section-subtitle">A step-by-step journey to complete mental mastery through Ayurveda</p>
@@ -136,8 +165,9 @@ export default function Home() {
       </section>
 
       {/* Programs Preview */}
-      <section className="section programs-preview">
-        <div className="container">
+      <section className="section programs-preview parallax-section">
+        {parallaxBg(2, 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1600&q=80&fit=crop', 'rgba(253,246,236,0.45)')}
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <p className="section-eyebrow">Programs</p>
           <h2 className="section-title">Choose Your Path</h2>
           <p className="section-subtitle">Tailored mentorship for every stage of life</p>
@@ -153,8 +183,9 @@ export default function Home() {
       <Testimonials />
 
       {/* CTA Banner */}
-      <section className="cta-banner">
-        <div className="container cta-banner__inner">
+      <section className="cta-banner parallax-section">
+        {parallaxBg(3, 'https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=1600&q=80&fit=crop', 'rgba(13,43,31,0.55)')}
+        <div className="container cta-banner__inner" style={{ position: 'relative', zIndex: 1 }}>
           <h2>Ready to Begin Your Transformation?</h2>
           <p>Take the first step towards a balanced, purposeful life with Ayurveda.</p>
           <a

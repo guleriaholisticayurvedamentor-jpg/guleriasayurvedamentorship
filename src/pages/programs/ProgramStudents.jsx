@@ -3,8 +3,12 @@ import './ProgramDetail.css'
 
 export default function ProgramStudents() {
   return (
-    <main className="program-detail">
-      <section className="page-hero">
+    <main className="program-detail program-detail--students">
+      <section className="page-hero" style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&q=80&fit=crop')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}>
         <div className="container">
           <p className="section-eyebrow">Program</p>
           <h1>📚 For Ayurveda Students</h1>

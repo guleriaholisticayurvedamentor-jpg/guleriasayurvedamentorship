@@ -28,10 +28,16 @@
   align-items: center;
   gap: 8px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--white);
   transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar__brand {
+    font-size: 1rem;
+  }
 }
 
 .navbar--scrolled .navbar__brand {
@@ -147,6 +153,15 @@
     gap: 20px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     align-items: flex-start;
+  }
+
+  .navbar__links a {
+    color: var(--text-dark) !important;
+  }
+
+  .navbar__links a.active,
+  .navbar__links a:hover {
+    color: var(--green-dark) !important;
   }
 
   .navbar__links--open {

@@ -19,7 +19,7 @@ const journey = [
   {
     phase: 'As an Ayurvedist',
     icon: '🌿',
-    desc: 'As an expert in Ayurvediya Rasa Shastra and Bhaishajya Kalpana, inculcating the knowledge of medicine preparation and therapeutic effects serving as the basis of future Ayurveda Practice.',
+    desc: 'As an expert in Ayurvedic Rasa Shastra and Bhaishajya Kalpana, inculcating the knowledge of medicine preparation and therapeutic effects serving as the basis of future Ayurveda practice.',
   },
   {
     phase: 'As a Life Mentor',

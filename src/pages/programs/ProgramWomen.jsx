@@ -3,8 +3,12 @@ import './ProgramDetail.css'
 
 export default function ProgramWomen() {
   return (
-    <main className="program-detail">
-      <section className="page-hero">
+    <main className="program-detail program-detail--women">
+      <section className="page-hero" style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1600&q=80&fit=crop')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}>
         <div className="container">
           <p className="section-eyebrow">Program</p>
           <h1>🌸 For Working Women</h1>
@@ -82,7 +86,7 @@ export default function ProgramWomen() {
           <h2 className="section-title">Who Is This For?</h2>
           <div className="who-grid" style={{ marginTop: '40px' }}>
             {[
-              { icon: '👩‍💼', text: 'Working professionals feeling overwhelmed and burnt out' },
+              { icon: '👩‍💼', text: 'Working professionals feeling overwhelmed and burned out' },
               { icon: '👩‍👧', text: 'Mothers balancing career and family responsibilities' },
               { icon: '🌿', text: 'Women seeking a natural approach to health and wellness' },
               { icon: '💭', text: 'Those experiencing hormonal imbalances or chronic fatigue' },

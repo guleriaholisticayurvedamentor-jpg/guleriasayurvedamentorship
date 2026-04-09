@@ -1,8 +1,39 @@
 .page-hero {
-  background: linear-gradient(135deg, #0d2b1f, #1b4332);
+  background-color: #0d2b1f;
+  background-size: cover;
+  background-position: center center;
   padding: 140px 0 80px;
   text-align: center;
   color: var(--white);
+  position: relative;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 43, 31, 0.72);
+  z-index: 0;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Programs page hero */
+.programs-page .page-hero {
+  background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80&fit=crop');
+}
+
+/* About page hero */
+.about .page-hero {
+  background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&q=80&fit=crop');
+}
+
+/* Contact page hero */
+.contact-page .page-hero {
+  background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80&fit=crop');
 }
 
 .page-hero .section-eyebrow {

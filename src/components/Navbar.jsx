@@ -18,8 +18,8 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <Link to="/" className="navbar__brand" onClick={closeMenu}>
-          <span className="navbar__brand-leaf">🌿</span>
-          <span className="navbar__brand-text">Guleria's Ayurveda</span>
+          <span className="navbar__brand-leaf">🪷</span>
+          <span className="navbar__brand-text">Guleria's Ayurveda Mentorship</span>
         </Link>
 
         <button
