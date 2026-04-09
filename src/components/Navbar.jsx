@@ -50,6 +50,17 @@ export default function Navbar() {
           ))}
           <li>
             <a
+              href="https://wa.me/918283811383?text=Hello%20Dr.%20Guleria%2C%20I%20would%20like%20to%20know%20how%20to%20book%20a%20session."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__how-to-book"
+              onClick={closeMenu}
+            >
+              📋 How to Book
+            </a>
+          </li>
+          <li>
+            <a
               href="https://wa.me/918283811383?text=Hello%20Dr.%20Guleria%2C%20I%20would%20like%20to%20book%20a%20session."
               target="_blank"
               rel="noopener noreferrer"

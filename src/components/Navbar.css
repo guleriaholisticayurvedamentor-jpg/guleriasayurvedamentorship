@@ -172,3 +172,23 @@
     top: 100%;
   }
 }
+
+/* How to Book link */
+.navbar__how-to-book {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--saffron-light) !important;
+  transition: color 0.2s;
+}
+
+.navbar--scrolled .navbar__how-to-book {
+  color: var(--green-dark) !important;
+}
+
+@media (max-width: 768px) {
+  .navbar__how-to-book {
+    color: var(--green-dark) !important;
+  }
+}
