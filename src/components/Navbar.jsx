@@ -35,6 +35,7 @@ export default function Navbar() {
             { to: '/', label: 'Home' },
             { to: '/about', label: 'About' },
             { to: '/programs', label: 'Programs' },
+            { to: '/mentorship-form', label: 'Apply Now' },
             { to: '/contact', label: 'Contact' },
           ].map(({ to, label }) => (
             <li key={to}>

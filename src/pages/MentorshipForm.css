@@ -1,0 +1,277 @@
+/* ── Page Layout ── */
+.mform-page {
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+/* ── Hero ── */
+.mform-hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  padding: 80px 0 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mform-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.mform-hero .section-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.mform-hero__title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.mform-hero__caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--saffron-light);
+  margin-bottom: 20px;
+}
+
+.mform-hero__desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ── Form Section ── */
+.mform-section {
+  background: var(--cream);
+  padding: 64px 0 80px;
+}
+
+.mform-container {
+  max-width: 760px;
+}
+
+.mform-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 32px rgba(27, 67, 50, 0.08);
+  border: 1px solid var(--beige-dark);
+}
+
+/* ── Note banner ── */
+.mform-note {
+  background: linear-gradient(135deg, #e8f5e9, #f0ffe4);
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  color: var(--green-dark);
+  margin-bottom: 36px;
+  font-style: italic;
+}
+
+/* ── Section headers inside form ── */
+.mform-group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--beige-dark);
+}
+
+.mform-group-header--spaced {
+  margin-top: 40px;
+}
+
+.mform-group-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.mform-group-header h2 {
+  font-size: 1.3rem;
+  color: var(--green-dark);
+  margin: 0;
+}
+
+/* ── Grid ── */
+.mform-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Form Groups ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.3px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.req {
+  color: var(--earth);
+  margin-left: 2px;
+}
+
+.mform-optional {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-left: 6px;
+}
+
+.mform-hint {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* ── Inputs ── */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 13px 16px;
+  border: 1.5px solid var(--beige-dark);
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  resize: vertical;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
+  background: var(--white);
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23777' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* ── Error states ── */
+.form-group input[aria-invalid='true'],
+.form-group textarea[aria-invalid='true'],
+.form-group select[aria-invalid='true'] {
+  border-color: var(--earth);
+}
+
+.mform-error {
+  font-size: 0.78rem;
+  color: var(--earth);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ── Footer ── */
+.mform-footer {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.mform-privacy {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ── Submit button ── */
+.mform-submit {
+  background: #25d366;
+  color: var(--white);
+  border: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 48px !important;
+  font-size: 1.05rem !important;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 380px;
+}
+
+.mform-submit:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .mform-card {
+    padding: 28px 20px;
+    border-radius: 10px;
+  }
+
+  .mform-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .mform-hero {
+    padding: 60px 0 52px;
+  }
+
+  .mform-hero__title {
+    font-size: 1.9rem;
+  }
+
+  .mform-hero__caption {
+    font-size: 1.15rem;
+  }
+
+  .mform-submit {
+    padding: 14px 24px !important;
+    max-width: 100%;
+  }
+}

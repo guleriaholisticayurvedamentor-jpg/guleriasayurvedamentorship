@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import ProgramStudents from './pages/programs/ProgramStudents'
 import ProgramWomen from './pages/programs/ProgramWomen'
 import ProgramCorporates from './pages/programs/ProgramCorporates'
+import MentorshipForm from './pages/MentorshipForm'
 import './index.css'
 
 const WA_LINK = 'https://wa.me/918283811383?text=Hello%20Dr.%20Guleria%2C%20I%20would%20like%20to%20book%20a%20session.'
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/programs/women" element={<ProgramWomen />} />
           <Route path="/programs/corporates" element={<ProgramCorporates />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/mentorship-form" element={<MentorshipForm />} />
         </Routes>
         <Footer />
 
