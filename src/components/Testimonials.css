@@ -46,6 +46,23 @@
   opacity: 0.7;
 }
 
+.testimonials__stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.testimonials__stars .star {
+  font-size: 24px;
+  color: #fbbf24;
+  text-shadow: 0 0 4px rgba(251, 191, 36, 0.5);
+}
+
+.testimonials__stars .star.filled {
+  color: #fbbf24;
+}
+
 .testimonials__text {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.9);

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
+import { getPublishedFeedback } from '../services/feedbackService'
 import './Testimonials.css'
 
-const testimonials = [
+const staticTestimonials = [
   {
     id: 1,
     name: 'Dr. Rohini Garg',
@@ -79,19 +80,50 @@ export default function Testimonials() {
   const [active, setActive] = useState(0)
   const [expanded, setExpanded] = useState(null)
   const [animating, setAnimating] = useState(false)
+  const [dynamicReviews, setDynamicReviews] = useState([])
+  const [allTestimonials, setAllTestimonials] = useState(staticTestimonials)
+
+  // Load dynamic reviews from Supabase
+  useEffect(() => {
+    const loadDynamicReviews = async () => {
+      try {
+        const reviews = await getPublishedFeedback(10, 0)
+        // Convert reviews to testimonial format
+        const formattedReviews = reviews.map(review => ({
+          id: `dynamic-${review.id}`,
+          name: review.customer_name,
+          role: review.customer_role || 'Customer Review',
+          avatar: review.customer_name.charAt(0).toUpperCase(),
+          short: review.feedback.length > 100 ? review.feedback.substring(0, 100) + '...' : review.feedback,
+          full: review.feedback,
+          stars: review.stars
+        }))
+        
+        setDynamicReviews(formattedReviews)
+        // Show only dynamic reviews (most recent), don't include static testimonials
+        setAllTestimonials(formattedReviews.length > 0 ? formattedReviews : staticTestimonials)
+      } catch (error) {
+        console.error('Error loading dynamic reviews:', error)
+        // If error, just use static testimonials
+        setAllTestimonials(staticTestimonials)
+      }
+    }
+
+    loadDynamicReviews()
+  }, [])
 
   useEffect(() => {
     const t = setInterval(() => {
       setAnimating(true)
       setTimeout(() => {
-        setActive((p) => (p + 1) % testimonials.length)
+        setActive((p) => (p + 1) % allTestimonials.length)
         setAnimating(false)
       }, 400)
     }, 6000)
     return () => clearInterval(t)
-  }, [])
+  }, [allTestimonials.length])
 
-  const t = testimonials[active]
+  const t = allTestimonials[active]
 
   return (
     <section className="testimonials section">
@@ -102,6 +134,16 @@ export default function Testimonials() {
 
         <div className={`testimonials__card ${animating ? 'testimonials__card--out' : 'testimonials__card--in'}`}>
           <div className="testimonials__quote-mark">"</div>
+          
+          {/* Show stars if it's a dynamic review */}
+          {t.stars && (
+            <div className="testimonials__stars">
+              {[1, 2, 3, 4, 5].map(star => (
+                <span key={star} className={`star ${star <= t.stars ? 'filled' : ''}`}>★</span>
+              ))}
+            </div>
+          )}
+          
           <p className="testimonials__text">{t.short}</p>
 
           {expanded === t.id ? (
@@ -120,7 +162,7 @@ export default function Testimonials() {
           )}
 
           <div className="testimonials__author">
-            <span className="testimonials__avatar">{t.avatar}</span>
+            <span className="testimonials__avatar">{typeof t.avatar === 'string' && t.avatar.length === 1 ? t.avatar : t.avatar}</span>
             <div>
               <strong>{t.name}</strong>
               <span>{t.role}</span>
@@ -129,25 +171,13 @@ export default function Testimonials() {
         </div>
 
         <div className="testimonials__nav">
-          {testimonials.map((_, i) => (
+          {allTestimonials.map((_, i) => (
             <button
               key={i}
               className={`testimonials__dot ${i === active ? 'active' : ''}`}
               onClick={() => { setAnimating(true); setTimeout(() => { setActive(i); setAnimating(false) }, 400) }}
               aria-label={`Testimonial ${i + 1}`}
             />
-          ))}
-        </div>
-
-        <div className="testimonials__all">
-          {testimonials.map((t, i) => (
-            <div key={t.id} className={`testimonials__mini ${i === active ? 'active' : ''}`} onClick={() => setActive(i)}>
-              <span>{t.avatar}</span>
-              <div>
-                <strong>{t.name}</strong>
-                <small>{t.role}</small>
-              </div>
-            </div>
           ))}
         </div>
       </div>

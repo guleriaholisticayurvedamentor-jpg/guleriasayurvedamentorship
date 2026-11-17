@@ -12,6 +12,11 @@ import ProgramStudents from './pages/programs/ProgramStudents'
 import ProgramWomen from './pages/programs/ProgramWomen'
 import ProgramCorporates from './pages/programs/ProgramCorporates'
 import MentorshipForm from './pages/MentorshipForm'
+import CustomerFeedback from './pages/CustomerFeedback'
+import Gallery from './pages/Gallery'
+import AdminLogin from './pages/admin/AdminLogin'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import ProtectedRoute from './components/admin/ProtectedRoute'
 import './index.css'
 
 const WA_LINK = 'https://wa.me/918283811383?text=Hello%20Dr.%20Guleria%2C%20I%20would%20like%20to%20book%20a%20session.'
@@ -35,6 +40,17 @@ export default function App() {
           <Route path="/programs/corporates" element={<ProgramCorporates />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mentorship-form" element={<MentorshipForm />} />
+          <Route path="/feedback" element={<CustomerFeedback />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
         <Footer />
 
